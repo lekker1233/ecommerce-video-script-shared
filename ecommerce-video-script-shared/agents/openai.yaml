@@ -1,0 +1,4 @@
+interface:
+  display_name: "镜稿共享脚本工作台"
+  short_description: "每次读取最新三功能流程，创作完整电商脚本并归档至已授权的共享工作台"
+  default_prompt: "使用 $ecommerce-video-script-shared，读取最新流程后按我选择的功能生成完整脚本并归档。"

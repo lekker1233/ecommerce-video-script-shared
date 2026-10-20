@@ -1,0 +1,2 @@
+# Preserve exact bytes used by distribution.json SHA-256.
+* -text

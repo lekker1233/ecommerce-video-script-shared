@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "repository": "lekker1233/ecommerce-video-script-shared",
+  "version": "2026.10.20.2",
+  "ref": "v2026.10.20.2",
+  "skill_path": "ecommerce-video-script-shared",
+  "files": {
+    "SKILL.md": "9f20a41d61743f54af942f0079e0f3d3af7bea3a95de762729702fa151fcfcc2",
+    "agents/openai.yaml": "f4a605e0309aeff98fdf3d779743acc8fff62eb5794a8ea4d27a315e74fbef13",
+    "scripts/shared_client.py": "fdbb5e529917d71d57d798dd44737288fd936e1a3275a11b7ebc39efe47dad49",
+    "scripts/shared_store.py": "4def82863d19aa174d86eb79e163cca11700ea02a8c9bc9065037250a67acea2",
+    "scripts/update_skill.py": "b1a14bb079dfafe2676ab081ac0578ce68063a951ad86e077c8aa098cd4ac997",
+    "release.json": "1130d4aad07f84d4b81925767a47190508eed7645bd5c4e245f5bedb02c44e86"
+  }
+}

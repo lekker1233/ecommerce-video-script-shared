@@ -114,11 +114,12 @@ def installation(root, base=None):
 def protect(path, directory=False):
     if os.name == "nt":
         options = {"capture_output": True, "check": True, "creationflags": subprocess.CREATE_NO_WINDOW}
-        result = subprocess.run(["whoami", "/user", "/fo", "csv", "/nh"], text=True, **options)
-        match = re.search(r"S-1-[0-9-]+", result.stdout)
+        result = subprocess.run(["whoami", "/user", "/fo", "csv", "/nh"], **options)
+        # 不解码本地化用户名；只提取在所有 Windows 输出编码中相同的 ASCII SID。
+        match = re.search(rb"S-1-[0-9-]+", result.stdout or b"")
         if not match:
             raise UpdateError("permissions", "无法确认当前用户权限")
-        grant = f"*{match.group(0)}:" + ("(OI)(CI)F" if directory else "F")
+        grant = "*" + match.group(0).decode("ascii") + ":" + ("(OI)(CI)F" if directory else "F")
         subprocess.run(["icacls", str(path), "/inheritance:r", "/grant:r", grant], **options)
     else:
         path.chmod(0o700 if directory else 0o600)

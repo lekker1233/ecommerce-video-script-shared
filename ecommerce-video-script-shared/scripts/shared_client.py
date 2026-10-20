@@ -21,7 +21,7 @@ from urllib.request import Request, HTTPSHandler, HTTPRedirectHandler, build_ope
 
 import shared_store as store
 
-RUNTIME_VERSION = "2026.10.20.2"
+RUNTIME_VERSION = "2026.10.20.3"
 FILES = {"workflow.md", *("references/" + name + ".md" for name in
          ("original", "reference", "copy", "output-contract", "archive", "website-contract"))}
 ENVELOPE = ("schema_version", "script_id", "version", "parent_version", "created_at",
@@ -53,13 +53,15 @@ def protect(path, directory=False):
     if os.name == "nt":
         # Windows 用户目录之外不放凭据；明确移除继承，授权当前 Windows 身份。
         result = subprocess.run(["whoami", "/user", "/fo", "csv", "/nh"],
-                                capture_output=True, text=True, check=True)
-        match = re.search(r"S-1-[0-9-]+", result.stdout)
+                                capture_output=True, check=True,
+                                creationflags=subprocess.CREATE_NO_WINDOW)
+        # whoami 的本地化用户名不随 Python -X utf8 改编码，只提取 ASCII SID。
+        match = re.search(rb"S-1-[0-9-]+", result.stdout or b"")
         if not match:
             raise ClientError("permissions", "无法确认当前 Windows 身份，未保存凭据")
-        grant = f"*{match.group(0)}:" + ("(OI)(CI)F" if directory else "F")
+        grant = "*" + match.group(0).decode("ascii") + ":" + ("(OI)(CI)F" if directory else "F")
         subprocess.run(["icacls", str(path), "/inheritance:r", "/grant:r", grant],
-                       capture_output=True, check=True)
+                       capture_output=True, check=True, creationflags=subprocess.CREATE_NO_WINDOW)
     else:
         path.chmod(0o700 if directory else 0o600)
 

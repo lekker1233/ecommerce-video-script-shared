@@ -69,6 +69,8 @@ python "<Skill安装目录>/scripts/update_skill.py" --force
 
 此前下载的旧安装包若没有 `scripts/update_skill.py`，需要先安装一次带更新器的新版，之后才能使用每日检查。旧包不会凭空获得新增程序；迁移时保留安装目录之外的成员配置和本地作品库。
 
+若安装的是 `2026.10.20.2`，并在 Windows 上遇到 `whoami` 编码报错，该旧更新器无法启动。请从 Skill 目录外把旧安装备份到 Skill 扫描目录外，再用安装器安装当前版；保留 `$CODEX_HOME/ecommerce-video-script-shared` 中的连接与稿件。`2026.10.20.3` 已修正 SID 的字节读取方式。
+
 规则刷新及完整稿件保存：
 
 ```text

@@ -7,6 +7,10 @@ description: "创作并自动归档电商视频完整脚本，支持产品原创
 
 这是镜稿共享 Skill 的 GitHub 发行版。三类创作流程和客户端由 `lekker1233/ecommerce-video-script-shared` 发布；成员的连接资料和本地稿件独立保存，升级不覆盖这些数据。
 
+## 使用说明与启动提示词
+
+[三功能使用说明](https://scripts.wenran007.com/guide.html) 提供各功能的资料清单、完整启动提示词和复制按钮；[GitHub 文字版](https://github.com/lekker1233/ecommerce-video-script-shared#三功能完整使用说明) 保留同一份完整说明。用户询问如何使用、上传什么或需要启动提示词时，优先引导到对应功能；只查看说明不需要连接成员账号，也不创建或上传稿件。
+
 ## 安装与版本检查
 
 仓库安装入口：`https://github.com/lekker1233/ecommerce-video-script-shared/tree/main/ecommerce-video-script-shared`。使用 Codex 的 `skill-installer` 安装到个人 Skill 目录；安装后从下一轮开始使用。

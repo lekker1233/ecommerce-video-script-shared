@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
   "repository": "lekker1233/ecommerce-video-script-shared",
-  "version": "2026.10.21.1",
-  "ref": "v2026.10.21.1",
+  "version": "2026.10.23.1",
+  "ref": "v2026.10.23.1",
   "skill_path": "ecommerce-video-script-shared",
   "files": {
-    "SKILL.md": "d1b90e0dd212baff267929ca16910d9112df07cdbce59f4c400098d29a19ef46",
-    "agents/openai.yaml": "f4a605e0309aeff98fdf3d779743acc8fff62eb5794a8ea4d27a315e74fbef13",
+    "SKILL.md": "90c4d0ab11ee658cd29c3aee5caadb89e5824fd19cbaed9cb0124790c78fab5a",
+    "agents/openai.yaml": "b48af06e9163d3a1dd7ac31f001484cfc40e3f134dc3a19612d08add9646c0fb",
     "scripts/shared_client.py": "8a702d2708ac485f58756b5f963628b9a824924caeac4ab90c2ab87a47317d58",
     "scripts/shared_store.py": "4def82863d19aa174d86eb79e163cca11700ea02a8c9bc9065037250a67acea2",
     "scripts/update_skill.py": "9efa49aa0e2bd3f50d1bddf9d7d6a83eeb9db4d032d6953064f99125f5d6ebf5",
-    "release.json": "8c135edbee7aab691df14ab4110f404d7d8591989960b712342209ad14ede4bd"
+    "release.json": "783aae7ae9fe8e03e4ef3e7c8c19445608aeb1ce6bdc2d58e0b4491c220693e8"
   }
 }
